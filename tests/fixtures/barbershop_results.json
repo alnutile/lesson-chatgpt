@@ -1,0 +1,19 @@
+{
+    "id": "cmpl-6rdDmRRRDN9C0bydmafHvZ1OQ6iA5",
+    "object": "text_completion",
+    "created": 1678240170,
+    "model": "text-davinci-003",
+    "choices": [
+        {
+            "text": "\n\nPossible timeslots for the customer could be 2pm to 2",
+            "index": 0,
+            "logprobs": null,
+            "finishReason": "length"
+        }
+    ],
+    "usage": {
+        "promptTokens": 123,
+        "completionTokens": 16,
+        "totalTokens": 139
+    }
+}

@@ -41,15 +41,24 @@ const logout = () => {
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link :href="route('examples.main')">
                                     <ApplicationMark class="block h-9 w-auto" />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                <NavLink :href="route('examples.main')"
+                                         :active="route().current('examples.main')">
+                                    Ask
+                                </NavLink>
+                                <NavLink :href="route('examples.barber')"
+                                         :active="route().current('examples.barber')">
+                                    Example 1: BarberShop
+                                </NavLink>
+                                <NavLink :href="route('examples.image')"
+                                         :active="route().current('examples.image')">
+                                    Example 2: Image Creation
                                 </NavLink>
                             </div>
                         </div>
@@ -57,7 +66,8 @@ const logout = () => {
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative">
                                 <!-- Teams Dropdown -->
-                                <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
+                                <Dropdown v-if="$page.props.jetstream.hasTeamFeatures"
+                                          align="right" width="60">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">

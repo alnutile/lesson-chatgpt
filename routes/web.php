@@ -17,12 +17,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return to_route('examples.main');
 });
 
 Route::middleware([
@@ -39,12 +34,25 @@ Route::middleware([
             Route::get("/examples/main", 'mainInterface')
                 ->name("examples.main");
 
+            Route::get("/examples/image", 'exampleImage')
+                ->name("examples.image");
+
+            Route::post("/examples/image", 'exampleImageRequest')
+                ->name('examples.image.request');
+
+            Route::get("/examples/barber", 'exampleBarberShop')
+                ->name("examples.barber");
+
+            Route::post("/examples/barber", 'exampleBarberShopRequest')
+                ->name('examples.barber.request');
+
             Route::get("/examples/planning", 'examplePlanning')
                 ->name("examples.planning");
 
             Route::post("/examples/ask", 'ask')
                 ->name('examples.ask');
         });
+
 
 
 });
